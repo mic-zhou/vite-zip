@@ -1,0 +1,63 @@
+{
+  "name": "vite-zip",
+  "version": "0.1.0",
+  "description": "Vite plugin that zips the dist folder after build. jszip is an optional peer dependency, loaded only when zipping.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mic-zhou/vite-zip.git"
+  },
+  "homepage": "https://github.com/mic-zhou/vite-zip#readme",
+  "bugs": {
+    "url": "https://github.com/mic-zhou/vite-zip/issues"
+  },
+  "keywords": [
+    "vite-plugin",
+    "zip",
+    "dist",
+    "compression"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "peerDependencies": {
+    "jszip": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "jszip": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@vitest/coverage-v8": "^0.34.6",
+    "jsdom": "^22.0.0",
+    "jszip": "^3.10.1",
+    "typescript": "^4.9.5",
+    "vitest": "^0.34.6"
+  }
+}
