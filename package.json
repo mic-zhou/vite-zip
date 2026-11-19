@@ -1,6 +1,6 @@
 {
   "name": "vite-zip",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Vite plugin that zips the dist folder after build. jszip is an optional peer dependency, loaded only when zipping.",
   "type": "module",
   "license": "MIT",
@@ -36,7 +36,10 @@
     "vite-plugin",
     "zip",
     "dist",
-    "compression"
+    "compression",
+    "archive",
+    "build",
+    "pack"
   ],
   "engines": {
     "node": ">=16"
